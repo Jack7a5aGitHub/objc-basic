@@ -11,15 +11,16 @@
 @implementation Account
 
 - (void) startAction{
-    FavouriteProgrammingLanguage *try = [[FavouriteProgrammingLanguage alloc]init];
-    try.delegate = self;
-    [try printDetails];
+    FavouriteProgrammingLanguage *objcCanDo = [[FavouriteProgrammingLanguage alloc]init];
+    objcCanDo.delegate = self;
+    [objcCanDo printDetails];
 }
 
-//where delegated to the printDetails func
+//where delegated to the printDetails
+/*
 - (void)processCompleted{
     NSLog(@"Process Completed");
 }
-
+*/
 @end
 

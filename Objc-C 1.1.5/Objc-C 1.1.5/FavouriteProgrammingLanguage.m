@@ -11,7 +11,7 @@
 @implementation FavouriteProgrammingLanguage
 
 - (void) printDetails{
-    NSLog(@"Objective-C ができる!");
+    NSLog(@"Objective-Cができる!");
     //[_delegate processCompleted];
 }
 

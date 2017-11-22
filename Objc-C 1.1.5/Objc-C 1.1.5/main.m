@@ -13,10 +13,8 @@
 int main(int argc, char * argv[]) {
     @autoreleasepool {
    
-        Account *tryPrint = [[Account alloc] init];
-    
-        [tryPrint startAction];
+        Account *printCanDo = [[Account alloc] init];
+        [printCanDo startAction];
     }
-    
     return 0;
 }
