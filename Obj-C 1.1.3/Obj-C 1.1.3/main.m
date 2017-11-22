@@ -28,7 +28,7 @@ int main(int argc, char * argv[]) {
             NSLog(@"%@", item);
         }
         for ( int i = 0; i < textArray.count; i++){
-            NSLog(@" Element %i = %@", i, [textArray objectAtIndex:i]);
+            NSLog(@" Element %i = %@", i, textArray [i]);
         }
         // Switch
         int a = 3;
