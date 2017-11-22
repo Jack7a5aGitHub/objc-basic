@@ -15,32 +15,32 @@ int main(int argc, char * argv[]) {
         int num = 16;
         // if ~else if 文
         if (num == 15) {
-            printf("The number equals to 15");
-        }else {
-            printf("The number does not equal to 15");
+            NSLog(@"The number equals to 15");
+        } else {
+            NSLog(@"The number does not equal to 15");
         }
         // 三項演算子　The ternary operator
-       (num == 15) ? printf("It is 15") : printf("It is not 15");
+        (num == 15) ? NSLog(@"It is 15") : NSLog(@"It is not 15");
         //for 文
-        NSArray *array = @[@"a", @"b", @"c", @"d"];
+        NSArray *textArray = @[@"a", @"b", @"c", @"d"];
         NSString *item;
-        for  (item in array) {
-            NSLog(@"%@", array);
+        for  (item in textArray) {
+            NSLog(@"%@", item);
+        }
+        for ( int i = 0; i < textArray.count; i++){
+            NSLog(@" Element %i = %@", i, [textArray objectAtIndex:i]);
         }
         // Switch
         int a = 3;
         switch (a) {
             case 0:
-            {
-                printf("diamond");
-            }
+                NSLog(@"diamond");
                 break;
             case 3:
-                printf("%d", a);
+                NSLog(@"%d", a);
                 break;
             default:
                 break;
-        
         }
         
     }
