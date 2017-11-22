@@ -23,7 +23,7 @@ int main(int argc, char * argv[]) {
         
          for (NSString *key in dict){
          NSLog(@"key: %@", key);
-         NSLog(@"value: %@", [dict valueForKey:key]);
+         NSLog(@"value: %@", dict[key]);
          }
          
         NSString *value = dict[@"key1"];
