@@ -13,16 +13,11 @@
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         
-        //[[Account alloc]init];
-        Account *ss = [[Account alloc]initWithAge:18 andName:@"ss" andSex:@"M" andnativeLanguage:@"Java"];
-        Account *FF = [[Account alloc]initWithAge:99 andName:@"FF" andSex:@"F" andnativeLanguage:@"NO"];
-        /*
-         Account *william = [Account personWithAge:18 andName:@"William" andSex:@"M" andNativeLanguage:@"English"];
-         Account *mary = [Account personWithAge:20 andName:@"Mary" andSex:@"F" andNativeLanguage:@"Japanese"];
-         */
-        [ss printName];
-        [ss printIntro];
-        [FF printIntro];
+        Account *alex = [[Account alloc]initWithAge:18 andName:@"Alex" andSex:@"M" andnativeLanguage:@"Java"];
+        Account *mary = [[Account alloc]initWithAge:99 andName:@"Mary" andSex:@"F" andnativeLanguage:@"Swift"];
+        
+        [alex printIntro];
+        [mary printIntro];
         
     }
     return 0;

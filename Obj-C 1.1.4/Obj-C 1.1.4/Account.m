@@ -20,7 +20,6 @@
         self.nativeLanguage = nativeLanguage;
     }
     return self;
-    
 }
 
 - (void) printName
@@ -31,7 +30,7 @@
 - (void) printIntro
 {
     if ([self.sex  isEqual: @"M"]) { NSLog(@"%@君は、%@が得意な%d歳です。", self.name, self.nativeLanguage, self.age);
-    }else {
+    } else {
         NSLog(@"%@さんは、%@が得意な%d歳です。", self.name, self.nativeLanguage, self.age);
     }
 }
