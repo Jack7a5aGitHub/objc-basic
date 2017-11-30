@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.textLabel.text = @"Obj-C講座";
+   self.textLabel.text = NSLocalizedString(@"Obj-C", nil);
 }
 
 - (void)didReceiveMemoryWarning {
