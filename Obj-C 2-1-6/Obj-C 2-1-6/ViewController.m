@@ -10,6 +10,13 @@
 
 @interface ViewController ()
 
+@property (readwrite, nonatomic) IBOutlet UIWebView *webView;
+- (IBAction)goBack:(UIBarButtonItem *)sender;
+
+- (IBAction)goForward:(UIBarButtonItem *)sender;
+
+- (IBAction)Reload:(UIBarButtonItem *)sender;
+
 @end
 
 @implementation ViewController
@@ -20,6 +27,7 @@
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
+    self.webView.delegate = self;
    
 }
 
@@ -27,6 +35,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Cannot Connect To The Internet" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okBtn = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        NSLog(@"OK");
+        
+    }];
+    
+    [alert addAction:okBtn];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 
 - (IBAction)goBack:(UIBarButtonItem *)sender {
     [self.webView goBack];
