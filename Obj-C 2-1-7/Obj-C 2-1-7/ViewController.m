@@ -10,14 +10,16 @@
 
 @interface ViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   textField.delegate = self;
-    textField.userInteractionEnabled = YES;
+   self.textField.delegate = self;
+    self.textField.userInteractionEnabled = YES;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController<UITextFieldDelegate>{
-    IBOutlet UITextField *textField;
 }
 
 @end
