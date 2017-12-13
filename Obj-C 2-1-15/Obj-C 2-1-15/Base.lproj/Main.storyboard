@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tEG-JA-DdQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 2-->
+        <scene sceneID="Dtn-RW-4lS">
+            <objects>
+                <viewController id="bMG-J0-q6b" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="75w-e1-GeL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL2-LE-RDf">
+                                <rect key="frame" x="115" y="291" width="145" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="X0m-Kl-tP5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" image="icons8-search-25" id="cLs-XW-IzE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ioc-d4-Sbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183.2" y="-212.74362818590706"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="SJG-Eb-wvH">
+            <objects>
+                <viewController id="nhP-hW-SS3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fkS-A9-lyO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4F-uv-ApE">
+                                <rect key="frame" x="114" y="298" width="146" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BW8-Ft-cuL"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="icons8-folder-invoices-25" id="QOR-Cf-GKx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QI4-o3-KGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183.2" y="-877.51124437781118"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nlw-WS-cla">
+            <objects>
+                <tabBarController id="tEG-JA-DdQ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mBJ-48-bbF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nhP-hW-SS3" kind="relationship" relationship="viewControllers" id="v4d-SP-znF"/>
+                        <segue destination="bMG-J0-q6b" kind="relationship" relationship="viewControllers" id="nO2-Sh-JEP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7lD-0i-uZ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="-545"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-folder-invoices-25" width="25" height="25"/>
+        <image name="icons8-search-25" width="25" height="25"/>
+    </resources>
+</document>
