@@ -9,7 +9,6 @@
 #import "SecondViewController.h"
 
 @interface SecondViewController ()
-- (IBAction)backToHomeVC:(id)sender;
 
 @end
 

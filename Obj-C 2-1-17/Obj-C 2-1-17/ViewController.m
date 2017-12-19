@@ -31,7 +31,8 @@
 
 - (IBAction)presentToSecondVC:(id)sender {
     
-    SecondViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"second"];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"secondStory" bundle:nil];
+    SecondViewController *secondVC = [storyBoard instantiateViewControllerWithIdentifier:@"second"];
     secondVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:secondVC animated:YES completion:nil];
     
