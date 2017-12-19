@@ -13,8 +13,8 @@
 		0AC917651FD7F3460022D3E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC917631FD7F3460022D3E8 /* LaunchScreen.storyboard */; };
 		0AC917681FD7F3460022D3E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC917671FD7F3460022D3E8 /* main.m */; };
 		0AC917701FD7F3C80022D3E8 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC9176F1FD7F3C80022D3E8 /* CustomTableViewCell.m */; };
-		0AC917721FD7F5620022D3E8 /* TableViewList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AC917711FD7F5620022D3E8 /* TableViewList.plist */; };
 		0AC917741FD7F5800022D3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC917731FD7F5800022D3E8 /* Assets.xcassets */; };
+		0ADE62181FE1205B00EFB81E /* TableViewList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE62171FE1205B00EFB81E /* TableViewList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		0AC917671FD7F3460022D3E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0AC9176E1FD7F3C80022D3E8 /* CustomTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		0AC9176F1FD7F3C80022D3E8 /* CustomTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
-		0AC917711FD7F5620022D3E8 /* TableViewList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TableViewList.plist; path = "../../Obj-C 2-1-10/Obj-C 2-1-10/TableViewList.plist"; sourceTree = "<group>"; };
 		0AC917731FD7F5800022D3E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../Obj-C 2-1-10/Obj-C 2-1-10/Assets.xcassets"; sourceTree = "<group>"; };
+		0ADE62171FE1205B00EFB81E /* TableViewList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = TableViewList.plist; path = "../../Obj-C 2-1-14/Obj-C 2-1-14/TableViewList.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 				0AC9176E1FD7F3C80022D3E8 /* CustomTableViewCell.h */,
 				0AC9176F1FD7F3C80022D3E8 /* CustomTableViewCell.m */,
 				0AC9175E1FD7F3460022D3E8 /* Main.storyboard */,
-				0AC917711FD7F5620022D3E8 /* TableViewList.plist */,
+				0ADE62171FE1205B00EFB81E /* TableViewList.plist */,
 				0AC917731FD7F5800022D3E8 /* Assets.xcassets */,
 				0AC917631FD7F3460022D3E8 /* LaunchScreen.storyboard */,
 				0AC917661FD7F3460022D3E8 /* Info.plist */,
@@ -137,8 +137,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AC917721FD7F5620022D3E8 /* TableViewList.plist in Resources */,
 				0AC917651FD7F3460022D3E8 /* LaunchScreen.storyboard in Resources */,
+				0ADE62181FE1205B00EFB81E /* TableViewList.plist in Resources */,
 				0AC917601FD7F3460022D3E8 /* Main.storyboard in Resources */,
 				0AC917741FD7F5800022D3E8 /* Assets.xcassets in Resources */,
 			);

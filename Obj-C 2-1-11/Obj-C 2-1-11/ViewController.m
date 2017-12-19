@@ -8,15 +8,24 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+typedef NS_ENUM(NSUInteger, Class){
+    frutis,
+    photos,
+};
+
+
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property NSArray* tableArray;
+@property NSArray* photoArray;
 
-@property NSArray* sectionTitleA;
+@property NSArray* fruitArray;
 
-@property NSArray* sectionTitleB;
+@property NSDictionary* plistDictionary;
+
+@property NSArray *sectionArray;
+
 
 @end
 
@@ -27,12 +36,13 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"TableViewList" ofType:@"plist"];
-    NSArray *contentArray = [NSArray arrayWithContentsOfFile:path];
-    self.tableArray = [[NSMutableArray alloc]initWithArray:contentArray copyItems:YES];
+    self.sectionArray = self.plistDictionary.allKeys;
+    self.plistDictionary = [NSDictionary dictionaryWithContentsOfFile:path];
+    self.photoArray = [self.plistDictionary valueForKey:@"Photos"];
+    self.fruitArray = [self.plistDictionary valueForKey:@"Fruits"];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 60;
-    self.sectionTitleA = [self.tableArray valueForKey:@"groupA"];
-    self.sectionTitleB = [self.tableArray valueForKey:@"groupB"];
+    
+    
 }
 
 
@@ -42,24 +52,61 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    NSInteger rows = 0;
+    switch (section) {
+        case photos:
+            rows = self.photoArray.count;
+            break;
+        case frutis:
+            rows = self.fruitArray.count;
+            break;
+            default:
+            break;
+            
+    }
+    return rows;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [[self.tableArray objectAtIndex:indexPath.row]valueForKey:@"name"];
-    NSString *imageName = [[self.tableArray objectAtIndex:indexPath.row]valueForKey:@"photo"];
+    
+    NSString *itemName;
+    
+    switch (indexPath.section){
+        case photos:
+            itemName = self.photoArray[indexPath.row];
+            break;
+        case frutis:
+            itemName = self.fruitArray[indexPath.row];
+            break;
+            default:
+            break;
+    }
+    
+    cell.textLabel.text = itemName;
+    NSString *imageName = itemName;
     cell.imageView.image = [UIImage imageNamed:imageName];
     return cell;
 
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [self.sectionTitleA objectAtIndex:section];
+    NSString *title;
+    switch (section){
+        case photos:
+            title = @"Photos";
+            break;
+        case frutis:
+            title = @"Fruits";
+            break;
+        default:
+            break;
+    }
+    return title;
 }
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
     return 2;
 }
 
