@@ -20,7 +20,6 @@
 
 @property NSArray *galleryArray;
 
-
 @end
 
 @implementation ViewController
@@ -37,7 +36,6 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -46,7 +44,7 @@
     return self.galleryArray.count;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [[self.galleryArray objectAtIndex:section] count];
+    return [self.galleryArray[section] count];
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
