@@ -15,34 +15,25 @@
 
 - (IBAction)passDataToSecondVC:(id)sender;
 
-
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if([segue.identifier isEqualToString:@"segue"]){
-        SecondViewController *secondVC = (SecondViewController *)segue.destinationViewController;
-     secondVC.tempText = self.textField.text;
-    }
 }
 
 - (IBAction)passDataToSecondVC:(id)sender {
     
-    
-    [self performSegueWithIdentifier:@"segue" sender:self];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"secondStoryboard" bundle:nil];
+    SecondViewController *secondVC = [storyBoard instantiateViewControllerWithIdentifier:@"second"];
+    secondVC.tempText = self.textField.text;
+    [self.navigationController pushViewController:secondVC animated:YES];
     
 }
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ADE62471FE2D91500EFB81E /* secondStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ADE62461FE2D91500EFB81E /* secondStoryboard.storyboard */; };
 		0AEC9F331FDFC26A0045FA1A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC9F321FDFC26A0045FA1A /* AppDelegate.m */; };
 		0AEC9F361FDFC26A0045FA1A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC9F351FDFC26A0045FA1A /* ViewController.m */; };
 		0AEC9F391FDFC26A0045FA1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC9F371FDFC26A0045FA1A /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ADE62461FE2D91500EFB81E /* secondStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = secondStoryboard.storyboard; sourceTree = "<group>"; };
 		0AEC9F2E1FDFC26A0045FA1A /* Obj-C 2-1-19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C 2-1-19.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC9F311FDFC26A0045FA1A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AEC9F321FDFC26A0045FA1A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				0AEC9F321FDFC26A0045FA1A /* AppDelegate.m */,
 				0AEC9F341FDFC26A0045FA1A /* ViewController.h */,
 				0AEC9F351FDFC26A0045FA1A /* ViewController.m */,
+				0ADE62461FE2D91500EFB81E /* secondStoryboard.storyboard */,
 				0AEC9F371FDFC26A0045FA1A /* Main.storyboard */,
 				0AEC9F471FDFC3120045FA1A /* SecondViewController.h */,
 				0AEC9F481FDFC3120045FA1A /* SecondViewController.m */,
@@ -137,6 +140,7 @@
 				0AEC9F3E1FDFC26A0045FA1A /* LaunchScreen.storyboard in Resources */,
 				0AEC9F3B1FDFC26A0045FA1A /* Assets.xcassets in Resources */,
 				0AEC9F391FDFC26A0045FA1A /* Main.storyboard in Resources */,
+				0ADE62471FE2D91500EFB81E /* secondStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
