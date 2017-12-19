@@ -1,38 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
-	<dict>
-		<key>groupA</key>
-		<string>A</string>
-		<key>photo</key>
-		<string>photo0</string>
-		<key>name</key>
-		<string>Item0 I am a boy hihihih I live in japan lololololol How about you???</string>
-	</dict>
-	<dict>
-		<key>groupA</key>
-		<string>A</string>
-		<key>photo</key>
-		<string>photo1</string>
-		<key>name</key>
+<dict>
+	<key>name</key>
+	<array>
+		<string>Item0</string>
 		<string>Item1</string>
-	</dict>
-	<dict>
-		<key>groupB</key>
-		<string>B</string>
-		<key>photo</key>
-		<string>photo2</string>
-		<key>name</key>
 		<string>Item2</string>
-	</dict>
-	<dict>
-		<key>groupB</key>
-		<string>B</string>
-		<key>photo</key>
+		<string>Item3</string>
+	</array>
+	<key>photo</key>
+	<array>
+		<string>photo0</string>
+		<string>photo1</string>
+		<string>photo2</string>
 		<string>photo3</string>
-		<key>name</key>
-		<string>Item3 i am learning objc not familiar with it. hahfueshfksksfjgggggggggghrknvsjknvjsebvjsnvjslnvjsnvlsnvl</string>
-	</dict>
-</array>
+	</array>
+</dict>
 </plist>
