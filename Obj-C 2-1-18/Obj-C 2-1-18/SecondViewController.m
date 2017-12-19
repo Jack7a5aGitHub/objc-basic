@@ -10,7 +10,6 @@
 #import "ViewController.h"
 
 @interface SecondViewController ()
-- (IBAction)popBackToHomeVC:(id)sender;
 
 @end
 

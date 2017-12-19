@@ -11,8 +11,6 @@
 
 @interface ViewController ()
 
-- (IBAction)pushToSecondVC:(id)sender;
-
 @end
 
 @implementation ViewController
@@ -28,9 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 - (IBAction)pushToSecondVC:(id)sender {
-    SecondViewController *secondVC = [self.storyboard instantiateViewControllerWithIdentifier:@"second"];
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"secondStoryboard" bundle:nil];
+    SecondViewController *secondVC = [storyBoard instantiateViewControllerWithIdentifier:@"second"];
     [self.navigationController pushViewController:secondVC animated:YES];
 }
 @end
