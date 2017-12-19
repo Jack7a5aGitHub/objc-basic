@@ -33,7 +33,7 @@
 
 -(UIViewController *)viewControllerAtIndex: (NSUInteger)index{
     ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-    viewController.pageIndex = (NSUInteger *)index;
+    viewController.pageIndex = (NSUInteger )index;
     viewController.strNumber = numbers[index];
     
     return viewController;

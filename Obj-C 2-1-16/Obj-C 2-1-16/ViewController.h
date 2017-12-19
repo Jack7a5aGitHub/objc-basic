@@ -10,7 +10,7 @@
 
 @interface ViewController : UIViewController
 
-@property NSUInteger *pageIndex;
+@property NSUInteger pageIndex;
 
 @property (weak, nonatomic) IBOutlet UILabel *screenNumber;
 
