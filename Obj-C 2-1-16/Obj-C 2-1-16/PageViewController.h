@@ -10,4 +10,6 @@
 
 @interface PageViewController : UIPageViewController<UIPageViewControllerDataSource>
 
+@property NSArray *numbers;
+
 @end

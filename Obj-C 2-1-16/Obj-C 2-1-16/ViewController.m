@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PageViewController.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.screenNumber.text = [NSString stringWithFormat:@"Page %@", self.strNumber ];//self.strNumber;
+    self.screenNumber.text = [NSString stringWithFormat:@"Page %@ / %@", self.strNumber, self.totalPage ];//self.strNumber;
 }
 
 - (void)didReceiveMemoryWarning {

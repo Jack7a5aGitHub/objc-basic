@@ -10,20 +10,20 @@
 #import "ViewController.h"
 
 @interface PageViewController ()
-{
-    NSArray *numbers;
-}
+
 @end
 
 @implementation PageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    numbers = @[@"1",@"2",@"3"];
+    self.numbers = @[@"1",@"2",@"3"];
     self.dataSource = self;
     ViewController *initialVC = (ViewController *)[self viewControllerAtIndex:0];
     NSArray *viewControllers = [NSArray arrayWithObject:initialVC];
     [self setViewControllers:viewControllers direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +34,8 @@
 -(UIViewController *)viewControllerAtIndex: (NSUInteger)index{
     ViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
     viewController.pageIndex = (NSUInteger )index;
-    viewController.strNumber = numbers[index];
+    viewController.strNumber = self.numbers[index];
+    viewController.totalPage = [NSString stringWithFormat:@"%lu", (unsigned long)self.numbers.count];
     
     return viewController;
 }
@@ -59,7 +60,7 @@
     }
     index++;
     
-    if (index == numbers.count){
+    if (index == self.numbers.count){
         return nil;
     }
     return [self viewControllerAtIndex:index];

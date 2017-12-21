@@ -15,5 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *screenNumber;
 
 @property NSString *strNumber;
+
+@property NSString *totalPage;
 @end
 
