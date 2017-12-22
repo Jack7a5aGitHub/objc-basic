@@ -14,4 +14,6 @@
 
 @property NSDate *limit;
 
+@property NSString *stringLimit;
+
 @end

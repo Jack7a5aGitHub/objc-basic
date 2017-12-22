@@ -29,11 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupDatePickerView];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-  
     [self getCurrentDate];
 }
 
