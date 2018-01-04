@@ -7,7 +7,6 @@
 //
 
 #import "model.h"
-#import "ViewController.h"
 
 @implementation model
 
@@ -18,7 +17,7 @@
     return result;
 }
 
-+(void)createDatabase{
+-(void)createDatabase{
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = docPaths[0];
     NSString *databasePath = [documentsDirectory stringByAppendingPathComponent:@"UserDatabase5.sqlite"];
@@ -32,7 +31,8 @@
     // NSLog(@"%@", databasePath);
 }
 
-+(void)retrieveDataFromDB{
+-(void)retrieveDataFromDB{
+    
     NSArray *docPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = docPaths[0];
     NSString *databasePath = [documentsDirectory stringByAppendingPathComponent:@"UserDatabase5.sqlite"];
@@ -40,28 +40,21 @@
     FMDatabase *database = [FMDatabase databaseWithPath:databasePath];
     [database open];
     FMResultSet *results = [database executeQuery:@"SELECT * FROM weatherTable2"];
-    ViewController *vc = [[ViewController alloc]init];
-    vc.weatherDatasArray = [[NSMutableArray alloc]init];
+    self.weatherDatasArray = [[NSMutableArray alloc]init];
     while([results next]){
-        model *modelData = [[model alloc]init];
-        modelData.date = [results stringForColumn:@"weatherDate"];
-        modelData.telop = [results stringForColumn:@"weatherTelop"];
-        modelData.imageUrl = [results stringForColumn:@"iconUrl"];
-        [vc.weatherDatasArray addObject:modelData];
-        NSLog(@"%@", vc.weatherDatasArray);
-        
-    }
-    for (model *modelData in vc.weatherDatasArray) {
-        
-        NSLog(@"%@の天気は%@です。%@", modelData.date, modelData.telop,modelData.imageUrl);
-        
+        Data *data = [[Data alloc]init];
+        data.date = [results stringForColumn:@"weatherDate"];
+        data.telop = [results stringForColumn:@"weatherTelop"];
+        data.imageUrl = [results stringForColumn:@"iconUrl"];
+        [self.weatherDatasArray addObject:data];
+        NSLog(@"%@", self.weatherDatasArray);
     }
     [results close];
     [database close];
-    [vc.tableView reloadData];
+
 }
 
-+(void)parseJsonAndSaveIntoDB
+-(void)parseJsonAndSaveIntoDB
 {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:BaseUrlString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject ) {
@@ -77,9 +70,7 @@
                 [database executeUpdate:insert];
                 [database close];
             }
-            ViewController *vc = [[ViewController alloc]init];
-            [vc.tableView reloadData];
-        
+    
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }

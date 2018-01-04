@@ -10,23 +10,27 @@
 #import "AFNetworking.h"
 #import "sqlite3.h"
 #import "FMDatabase.h"
+#import "Data.h"
+
+@protocol DataModelDelegate<NSObject>
+
+-(void)reloadData;
+
+@end
 
 @interface model : NSObject
 
-@property NSString *telop;
+@property(weak, nonatomic) id<DataModelDelegate> delegate;
 
-@property NSString *date;
+@property NSMutableArray *weatherDatasArray;
 
-@property NSString *imageUrl;
+-(void)createDatabase;
 
-//@property NSMutableArray *weatherDatasArray;
+-(void)retrieveDataFromDB;
 
-+(void)createDatabase;
-
-+(void)retrieveDataFromDB;
-
-+(void)parseJsonAndSaveIntoDB;
+-(void)parseJsonAndSaveIntoDB;
 
 @end
 
 static  NSString * const BaseUrlString = @"http://weather.livedoor.com/forecast/webservice/json/v1?city=130010";
+

@@ -9,10 +9,11 @@
 #import "ViewController.h"
 #import "model.h"
 #import "CustomTableViewCell.h"
+#import "TableViewProvider.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate,DataModelDelegate>
 
-@property model *model;
+@property TableViewProvider *provider;
 
 @end
 
@@ -20,62 +21,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    model *dataModel = [[model alloc]init];
+    dataModel.delegate = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [model createDatabase];
+        [dataModel createDatabase];
     });
-  //  [model parseJsonAndSaveIntoDB];
+    [dataModel parseJsonAndSaveIntoDB];
     self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+    self.provider = [[TableViewProvider alloc]init];
+    self.tableView.dataSource = self.provider;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-   
-    [model parseJsonAndSaveIntoDB];
-    [model retrieveDataFromDB];
+    model *dataModel = [[model alloc]init];
+    [dataModel parseJsonAndSaveIntoDB];
+    [dataModel retrieveDataFromDB];
+    self.provider.dataList = dataModel.weatherDatasArray;
+    
+    NSLog(@"dataList %@", self.provider.dataList);
     [self.tableView reloadData];
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.weatherDatasArray.count;
+- (void)reloadData{
+    [self.tableView reloadData];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-      CustomTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    model *modelData = self.weatherDatasArray[indexPath.row];
-    
-    NSBlockOperation *loadImageOperation = [[NSBlockOperation alloc] init];
-    __weak NSBlockOperation *weakOperation = loadImageOperation;
-    [loadImageOperation addExecutionBlock:^(void){
-        NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:modelData.imageUrl]];
-        UIImage *imageReceived = [UIImage imageWithData:imageData];
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^(void) {
- 
-            if (! weakOperation.isCancelled)
-            {
-                CustomTableViewCell *theCell = (CustomTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
-                theCell.imageView.image = imageReceived;
-                theCell.dateLabel.text = modelData.date;
-                theCell.telopLabel.text = modelData.telop;
-                
-            }
-        }];
-    }];
-    
-//    cell.dateLabel.text = modelData.date;
-//    cell.telopLabel.text = modelData.telop;
-//    cell.imgView.image = imageReceived;
-    
-    return cell;
-    
-}
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
     return YES;
 }

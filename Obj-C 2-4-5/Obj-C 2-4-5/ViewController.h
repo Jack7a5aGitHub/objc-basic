@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 
-@property NSMutableArray *weatherDatasArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
