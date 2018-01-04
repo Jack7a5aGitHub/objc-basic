@@ -2,11 +2,13 @@
 //  AppDelegate.m
 //  Obj-C 2-4-7
 //
-//  Created by Jack Wong on 2017/12/26.
+//  Created by Jack Wong on 2017/12/29.
 //  Copyright © 2017 Jack. All rights reserved.
 //
 
 #import "AppDelegate.h"
+@import TwitterKit;
+
 
 @interface AppDelegate ()
 
@@ -17,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+     [[Twitter sharedInstance] startWithConsumerKey:@"lq2YiIDAMKhsLtrKe10xVolPY" consumerSecret:@"RQbgHCm2xispuiLJ5WZd8UE9VzNhFusbwQiw4U4F8KclmjxVzw"];
     return YES;
 }
 
@@ -46,6 +49,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+-(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    if ([[Twitter sharedInstance] application:app openURL:url options:options]) {
+        NSLog(@"access OK");
+        
+    };
+    
+    return YES;
+}
 
 @end
