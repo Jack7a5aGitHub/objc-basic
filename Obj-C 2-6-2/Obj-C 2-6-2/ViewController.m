@@ -11,7 +11,10 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *scheme;
-@property (weak, nonatomic) IBOutlet UILabel *host;
+
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
 @end
 
@@ -24,7 +27,6 @@
     
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -36,36 +38,9 @@
         self.scheme.text = appdelegate.scheme;
     };
     if (appdelegate.host != nil){
-        self.host.text = appdelegate.host;
+        self.captionLabel.text = appdelegate.caption;
+        self.commentLabel.text = appdelegate.comment;
     };
-}
-//-(void)dealloc{
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
-//};
-//
-
-
-
-
-- (IBAction)passPara:(id)sender {
-    
-    NSString *customURL = @"stv://caption=ABC&comment=AAA";
-    UIApplication *application = [UIApplication sharedApplication];
-    NSURL *URL = [NSURL URLWithString:@"stv://"];
-    if ([application respondsToSelector:@selector(openURL:options:completionHandler:)])
-    {
-        [application openURL:URL options:@{}
-           completionHandler:^(BOOL success) {
-               NSLog(@"Open %@: %d",customURL,success);
-           }];
-    }
-    else {
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error!" message:@"No Custom URL is defined" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        [alertController addAction:ok];
-        [self presentViewController:alertController animated:YES completion:nil];
-    }
-    
 }
 
 @end

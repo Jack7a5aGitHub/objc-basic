@@ -52,11 +52,17 @@
     
     self.scheme = url.scheme;
     self.host = url.host;
-    NSLog(@"url recieved: %@", url);
-    NSLog(@"url scheme: %@", [url scheme]);
-    NSLog(@"query string: %@", [url query]);
-    NSLog(@"host: %@", [url host]);
-    NSLog(@"url path: %@", [url path]);
+    NSArray *hostComponents = [self.host componentsSeparatedByString:@"&"];
+    NSArray *firstParam = [[hostComponents objectAtIndex:0] componentsSeparatedByString:@"="];
+    NSArray *secondParam = [[hostComponents objectAtIndex:1] componentsSeparatedByString:@"="];
+    self.caption = firstParam[1];
+    self.comment = secondParam[1];
+    
+//    NSLog(@"url recieved: %@", url);
+//    NSLog(@"url scheme: %@", [url scheme]);
+//    NSLog(@"query string: %@", [url query]);
+//    NSLog(@"host: %@", [url host]);
+//    NSLog(@"url path: %@", [url path]);
     return YES;
 }
 

@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property NSString *host;
+@property NSString *caption;
+@property NSString *comment;
 @property NSString *scheme;
 
 @end
