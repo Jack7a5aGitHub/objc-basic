@@ -2,14 +2,16 @@
 //  ViewController.m
 //  Obj-C 2-4-6
 //
-//  Created by Jack Wong on 2017/12/25.
+//  Created by Jack Wong on 2017/12/29.
 //  Copyright © 2017 Jack. All rights reserved.
 //
 
 #import "ViewController.h"
-#import "Social/Social.h"
+#import "FBSDKShareKit/FBSDKShareKit.h"
 
-@interface ViewController ()
+@interface ViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
+@property UIImage *imageFromLibrary;
 
 @end
 
@@ -18,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
@@ -25,28 +28,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (IBAction)postFacebook:(id)sender {
+- (IBAction)shareUrl:(id)sender {
+    FBSDKShareLinkContent *content = [[FBSDKShareLinkContent alloc] init];
     
-    NSLog(@"Called");
-    
-    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]){
-        
-        SLComposeViewController *fbViewController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [fbViewController addImage:[UIImage imageNamed:@"photo0"]];
-        [fbViewController setInitialText:@"My First FaceBook message"];
-        [fbViewController setCompletionHandler:^(SLComposeViewControllerResult result) {
-            if (result == SLComposeViewControllerResultCancelled){
-                NSLog(@"Try to do sth");
-            }
-        }];
-        [self presentViewController:fbViewController animated:YES completion:nil];
-        
-    } else {
-        NSLog(@"Failed to Post");
-    }
-    
+    content.contentURL = [NSURL URLWithString:@"https://developers.facebook.com"];
+    NSLog(@"Success to share Url");
+    [FBSDKShareDialog showFromViewController:self
+                                 withContent:content
+                                    delegate:nil];
 }
 
-
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+  
+    [picker dismissViewControllerAnimated:YES completion:^{
+        FBSDKSharePhoto *photo = [[FBSDKSharePhoto alloc] init];
+        photo.image = image;
+        photo.userGenerated = YES;
+        FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
+        content.photos = @[photo];
+        [FBSDKShareDialog showFromViewController:self
+                                     withContent:content
+                                        delegate:nil];
+    }
+    ];
+   
+   
+}
+- (IBAction)sharePhoto:(id)sender {
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc]init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+    NSLog(@"Get Photo");
+    
+    
+}
 @end

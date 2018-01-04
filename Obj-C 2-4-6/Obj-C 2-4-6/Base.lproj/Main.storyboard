@@ -18,13 +18,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylF-MD-ERB">
-                                <rect key="frame" x="76" y="298" width="222" height="71"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l6-h8-N9I">
+                                <rect key="frame" x="110" y="160" width="154" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Facebook Post"/>
+                                <state key="normal" title="Share URL"/>
                                 <connections>
-                                    <action selector="postFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhg-MN-bfy"/>
+                                    <action selector="shareUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xta-hf-YHd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFn-hu-fY1">
+                                <rect key="frame" x="110" y="327" width="154" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Share Photo"/>
+                                <connections>
+                                    <action selector="sharePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5qp-9I-18a"/>
                                 </connections>
                             </button>
                         </subviews>
