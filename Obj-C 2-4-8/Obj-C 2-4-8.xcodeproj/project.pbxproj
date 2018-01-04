@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A753DBB1FF6AFFD00366B16 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A753DBA1FF6AFFD00366B16 /* Photos.framework */; };
 		0AA010511FF26C4B009F919C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA010501FF26C4B009F919C /* AppDelegate.m */; };
 		0AA010541FF26C4B009F919C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA010531FF26C4B009F919C /* ViewController.m */; };
 		0AA010571FF26C4B009F919C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA010551FF26C4B009F919C /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A753DBA1FF6AFFD00366B16 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		0AA0104C1FF26C4B009F919C /* Obj-C 2-4-8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Obj-C 2-4-8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA0104F1FF26C4B009F919C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0AA010501FF26C4B009F919C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,17 +38,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A753DBB1FF6AFFD00366B16 /* Photos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A753DB91FF6AFFD00366B16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A753DBA1FF6AFFD00366B16 /* Photos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0AA010431FF26C4B009F919C = {
 			isa = PBXGroup;
 			children = (
 				0AA0104E1FF26C4B009F919C /* Obj-C 2-4-8 */,
 				0AA0104D1FF26C4B009F919C /* Products */,
+				0A753DB91FF6AFFD00366B16 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
