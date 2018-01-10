@@ -13,6 +13,11 @@
 		0A753EB42005B7BE00366B16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A753EB22005B7BE00366B16 /* LaunchScreen.storyboard */; };
 		0A753EB72005B7BE00366B16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753EB62005B7BE00366B16 /* main.m */; };
 		0A753EBF2005B7F000366B16 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753EBE2005B7F000366B16 /* CalendarViewController.m */; };
+		0A753EC22005C2A000366B16 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753EC12005C2A000366B16 /* Model.m */; };
+		0A753EC52005C31700366B16 /* WeekCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753EC42005C31700366B16 /* WeekCell.m */; };
+		0A753EC82005C32F00366B16 /* MonthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753EC72005C32F00366B16 /* MonthCell.m */; };
+		0A753ECB2005C3C200366B16 /* WeekProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753ECA2005C3C200366B16 /* WeekProvider.m */; };
+		0A753ECE2005C3D700366B16 /* MonthProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A753ECD2005C3D700366B16 /* MonthProvider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,16 @@
 		0A753EB62005B7BE00366B16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0A753EBD2005B7F000366B16 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
 		0A753EBE2005B7F000366B16 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
+		0A753EC02005C2A000366B16 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		0A753EC12005C2A000366B16 /* Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		0A753EC32005C31700366B16 /* WeekCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeekCell.h; sourceTree = "<group>"; };
+		0A753EC42005C31700366B16 /* WeekCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeekCell.m; sourceTree = "<group>"; };
+		0A753EC62005C32F00366B16 /* MonthCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthCell.h; sourceTree = "<group>"; };
+		0A753EC72005C32F00366B16 /* MonthCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthCell.m; sourceTree = "<group>"; };
+		0A753EC92005C3C200366B16 /* WeekProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeekProvider.h; sourceTree = "<group>"; };
+		0A753ECA2005C3C200366B16 /* WeekProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeekProvider.m; sourceTree = "<group>"; };
+		0A753ECC2005C3D700366B16 /* MonthProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MonthProvider.h; sourceTree = "<group>"; };
+		0A753ECD2005C3D700366B16 /* MonthProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MonthProvider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				0A753EA62005B7BD00366B16 /* CalendarAppVersion2 */,
+				0A753ED52005C66400366B16 /* Support */,
 				0A753EA52005B7BD00366B16 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,17 +74,82 @@
 		0A753EA62005B7BD00366B16 /* CalendarAppVersion2 */ = {
 			isa = PBXGroup;
 			children = (
+				0A753ED42005C65000366B16 /* Model */,
+				0A753ED32005C63F00366B16 /* CalendarViewController */,
+				0A753ECF2005C5FB00366B16 /* WeekView */,
+				0A753ED12005C61F00366B16 /* WeekViewController */,
+				0A753ED22005C63200366B16 /* MonthViewController */,
+				0A753ED02005C61500366B16 /* MonthView */,
+				0A753EB52005B7BE00366B16 /* Info.plist */,
+			);
+			path = CalendarAppVersion2;
+			sourceTree = "<group>";
+		};
+		0A753ECF2005C5FB00366B16 /* WeekView */ = {
+			isa = PBXGroup;
+			children = (
+				0A753EC32005C31700366B16 /* WeekCell.h */,
+				0A753EC42005C31700366B16 /* WeekCell.m */,
+			);
+			path = WeekView;
+			sourceTree = "<group>";
+		};
+		0A753ED02005C61500366B16 /* MonthView */ = {
+			isa = PBXGroup;
+			children = (
+				0A753EC62005C32F00366B16 /* MonthCell.h */,
+				0A753EC72005C32F00366B16 /* MonthCell.m */,
+			);
+			path = MonthView;
+			sourceTree = "<group>";
+		};
+		0A753ED12005C61F00366B16 /* WeekViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A753EC92005C3C200366B16 /* WeekProvider.h */,
+				0A753ECA2005C3C200366B16 /* WeekProvider.m */,
+			);
+			path = WeekViewController;
+			sourceTree = "<group>";
+		};
+		0A753ED22005C63200366B16 /* MonthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0A753ECC2005C3D700366B16 /* MonthProvider.h */,
+				0A753ECD2005C3D700366B16 /* MonthProvider.m */,
+			);
+			path = MonthViewController;
+			sourceTree = "<group>";
+		};
+		0A753ED32005C63F00366B16 /* CalendarViewController */ = {
+			isa = PBXGroup;
+			children = (
 				0A753EBD2005B7F000366B16 /* CalendarViewController.h */,
 				0A753EBE2005B7F000366B16 /* CalendarViewController.m */,
+			);
+			path = CalendarViewController;
+			sourceTree = "<group>";
+		};
+		0A753ED42005C65000366B16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A753EC02005C2A000366B16 /* Model.h */,
+				0A753EC12005C2A000366B16 /* Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A753ED52005C66400366B16 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				0A753EA72005B7BE00366B16 /* AppDelegate.h */,
 				0A753EA82005B7BE00366B16 /* AppDelegate.m */,
 				0A753EAD2005B7BE00366B16 /* Main.storyboard */,
 				0A753EB02005B7BE00366B16 /* Assets.xcassets */,
 				0A753EB22005B7BE00366B16 /* LaunchScreen.storyboard */,
-				0A753EB52005B7BE00366B16 /* Info.plist */,
 				0A753EB62005B7BE00366B16 /* main.m */,
 			);
-			path = CalendarAppVersion2;
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,7 +225,12 @@
 			files = (
 				0A753EB72005B7BE00366B16 /* main.m in Sources */,
 				0A753EBF2005B7F000366B16 /* CalendarViewController.m in Sources */,
+				0A753EC82005C32F00366B16 /* MonthCell.m in Sources */,
+				0A753ECE2005C3D700366B16 /* MonthProvider.m in Sources */,
+				0A753ECB2005C3C200366B16 /* WeekProvider.m in Sources */,
+				0A753EC52005C31700366B16 /* WeekCell.m in Sources */,
 				0A753EA92005B7BE00366B16 /* AppDelegate.m in Sources */,
+				0A753EC22005C2A000366B16 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
