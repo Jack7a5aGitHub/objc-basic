@@ -17,10 +17,10 @@
 }
 
 //where delegated to the printDetails
-/*
+
 - (void)processCompleted{
-    NSLog(@"Process Completed");
+    NSLog(@"Objective-Cができる!");
 }
-*/
+
 @end
 
